@@ -25,7 +25,7 @@ SECRET_KEY = '=f^!36^um)sg2kqq6bwmv@vvk-xaappv1v=*unektf_%l*q-*&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['discord.mechagk.dk']
 
 
 # Application definition
