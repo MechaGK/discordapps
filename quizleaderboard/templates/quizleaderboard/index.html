@@ -1,0 +1,22 @@
+{% extends 'bootstrap.html' %}
+
+{% block title %}Quiz leaderboard{% endblock %}
+
+{% block content %}
+  {% if quiz_list %}
+    <div class="container-fluid mt-5">
+      {% for quiz in quiz_list %}
+        <div class="card">
+          <a href="{% url 'view-quiz' quiz.pk %}">
+            <div class="card-body">
+              <h5 class="card-title">{{ quiz.name }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ quiz.date }} - {{ quiz.creator.name }}</h6>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No quizzes are available.</p>
+  {% endif %}
+{% endblock %}
