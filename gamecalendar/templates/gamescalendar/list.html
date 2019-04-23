@@ -1,0 +1,22 @@
+{% extends 'bootstrap.html' %}
+
+{% block title %}Games calendar{% endblock %}
+
+{% block content %}
+  {% if game_list %}
+    <div class="container-fluid mt-5">
+      {% for game in game_list %}
+        <div class="card">
+          <a href="{{ game.url }}" target="_blank">
+            <div class="card-body">
+              <h5 class="card-title">{{ game.name }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ game.release_date|date:"j. F Y" }}</h6>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No games :(</p>
+  {% endif %}
+{% endblock %}
